@@ -53,7 +53,7 @@ The internet is an incredibly useful resource for businesses, but the inherent r
   * Update the firmware
   * Scan your public IP address from outside your network
 
-* Use a secure VPN if you need to get back into the network, don't open RDP.
+* Use a secure VPN if you need to get back into the network, don't open RDP. [LockCrypt spreading via RDP](https://www.alienvault.com/blogs/labs-research/lockcrypt-ransomware-spreading-via-rdp-brute-force-attacks)
 While there are many VPN options out there, choose one that does the following:
   * Has certificate based authentication - passwords are easy, certificates are infinitely harder.
   * Has a good reputation
@@ -61,8 +61,8 @@ While there are many VPN options out there, choose one that does the following:
   * Doesn't automatically give the user access to everything in your network.
 
 * Check for known vulnerabilities for your router
-  * [https://cve.mitre.org/] (https://cve.mitre.org/)
-  * [https://www.cvedetails.com/] (https://www.cvedetails.com/)
+  * [https://cve.mitre.org](https://cve.mitre.org/)
+  * [https://www.cvedetails.com/](https://www.cvedetails.com/)
 
 ## Updates
 Windows updates are a pain.  They do break things and they can slow down work.  They are particularly frustrating when you turn your computer on to quickly do something and realise that you are going to wait a half hour while it thinks about life.  The frustration of waiting for updates to complete before being able to use your computer pales into significance though when you have started your computer and been greeted with a virus / ransomware notice.
@@ -109,22 +109,26 @@ If you  do have lots of visitors coming into the building, setup a guest Wifi th
 
 
 ### Scan your network.
-Zenmap is a great, easy to use tool that will help to quickly diagnose what services are running.  It is not a foolproof solution, but a quick scan with Zenmap can expose ports that have been in-advertently left open and misconfigurations that make the system vulnerable.
+Zenmap is a great, easy to use tool that will help to quickly diagnose what services are running.  It is not a fool proof solution, but a quick scan with Zenmap can expose ports that have been in-advertently left open and misconfigurations that make the system vulnerable.
+
+[Zenmap](https://nmap.org/zenmap/)
+[Useful commands](https://www.cyberciti.biz/networking/nmap-command-examples-tutorials/)
 
 ### Turn off RDP.
 Remote desktop is very useful, but is another way into a system from the network.  If a single computer is compromised, any other devices on the network with RDP open, are now a target.  For most users, RDP isn't required and should be left off.
 
-### Don't use admin accounts.
-The temptation to grant users administrative rights in an active directory environment is great.  If a user is often making software changes, or as an IT administrator, you are often making changes, the tempation is to grant yourself admin rights.  
+[LockCrypt spreading via RDP](https://www.alienvault.com/blogs/labs-research/lockcrypt-ransomware-spreading-via-rdp-brute-force-attacks)
 
-Working in an unprivileged account provides an additional level of protection if and when a machine is compromised.  Clicking on a bad link as an administrator is infitely worse than clicking on the same link as a normal user.
+### Don't use admin accounts for general use.
+The temptation to grant users administrative rights in an active directory environment is great.  If a user is often making software changes, or as an IT administrator, you are often making changes, the temptation is to grant yourself admin rights.  
+
+Working in an unprivileged account provides an additional level of protection if and when a machine is compromised.  Clicking on a bad link as an administrator is infinitely worse than clicking on the same link as a normal user.
 
 ### Don't allow antivirus software to turn your firewall off.
 Some antivirus software provides the option for the software to manage the firewall configuration for all connected devices.  This is great, but must be treated with care as it can be configured to turn the firewall off just as easily as it can be configured to turn it back on.
 
 ### Segregate shared offices.
-If the IT department doesn't have full control over the devices in the network, segregate the network.   For example, if an office building has a single incoming fibre line that is shared by all the tennants, place a separate firewall between each separate tenant.  This means that any misconfiguration in the other tenants networks won't affect your computers / devices.
-
+If the IT department doesn't have full control over the devices in the network, segregate the network.   For example, if an office building has a single incoming fibre line that is shared by all the tenants, place a separate firewall between each separate tenant.  This means that any misconfiguration in the other tenants networks won't affect your computers / devices.
 
 ## File sharing
 Sharing access to files is critical for most businesses.  However, the more that is shared, the more that can be damaged by malware.
@@ -141,7 +145,7 @@ The most important part of setting up a reliable computer system for a company i
 * Have multiple forms of backup.  Automated, manual, online, offline, on-site, off-site.
 * Expect to recover from:
   * Hardware failure (e.g. a power surge destroying the file server).
-  * Virus / malware (e.g. wannacry encrypting all online documents).
+  * Virus / malware (e.g. Wannacry encrypting all online documents).
   * Corruption (e.g. a word file that can't be opened).
   * The building catching fire (Keep a copy offsite)
 
@@ -183,11 +187,10 @@ Backup to more than one location.  Have a non network connected backup, a NAS (t
 * A NAS provides quick on-site access to the data and can run automatically.
 * The non-network connected backup (e.g. USB drive) provides a recovery method in the case of a virus taking everything down.
 
-
 ## Antivirus
 
 * Do use anti-virus software on all your computers.
-* Consider using an anti-virus application that doesn't just check for virus signatures, but also watches for suspicous behaviour.
+* Consider using an anti-virus application that doesn't just check for virus signatures, but also watches for suspicious behaviour.
 * Avoid the free anti-virus software packages, unless you can work out why it is free.
 * Do update the anti-virus signatures regularly.
 
